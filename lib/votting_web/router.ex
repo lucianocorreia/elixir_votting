@@ -5,8 +5,10 @@ defmodule VottingWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", VottingWeb do
+  scope "/api/v1", VottingWeb do
     pipe_through :api
+
+    post("/admin/signin", Admin.SessionController, :create)
   end
 
   # Enables LiveDashboard only for development
