@@ -16,7 +16,7 @@ defmodule VottingWeb.Admin.SessionControllerTest do
           "password" => "123456"
         })
 
-      assert %{"status" => "ok", "data" => %{"name" => "Luciano Correia"}} =
+      assert %{"status" => "ok", "data" => %{"name" => "Luciano Correia", "token" => _token}} =
                json_response(conn, 200)
     end
 
